@@ -23,10 +23,19 @@ install:
 build_script:
 - ps: |
     craft --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER poppler
+    Tree C: /F | Set-Content cache\tree1.txt
+    Tree C: /F | Set-Content binaries\tree1.txt
+    Tree C: /F | Set-Content poppler\tree1.txt
 
 after_build:
 - ps: |
+    Tree C: /F | Set-Content cache\tree2.txt
+    Tree C: /F | Set-Content binaries\tree2.txt
+    Tree C: /F | Set-Content poppler\tree2.txt
     craft --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER --package poppler
+    Tree C: /F | Set-Content cache\tree3.txt
+    Tree C: /F | Set-Content binaries\tree3.txt
+    Tree C: /F | Set-Content poppler\tree3.txt
 
 test_script:
 - ps: |
