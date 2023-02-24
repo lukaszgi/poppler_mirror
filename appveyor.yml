@@ -29,6 +29,10 @@ after_build:
 test_script:
 - ps: |
    craft --src-dir $env:APPVEYOR_BUILD_FOLDER --test poppler
+   
+artifacts:
+  - path: cache\**\.*
+  - path: binaries\*   
 
 
 environment:
