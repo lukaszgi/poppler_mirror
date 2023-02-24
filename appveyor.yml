@@ -33,6 +33,8 @@ test_script:
 artifacts:
   - path: cache\**\.*
   - path: binaries\*   
+  - path: $env:APPVEYOR_BUILD_FOLDER
+  - path: poppler
 
 
 environment:
