@@ -34,6 +34,8 @@ after_build:
     Tree C: /F | Set-Content poppler\tree2.txt
     craft --no-cache --src-dir $env:APPVEYOR_BUILD_FOLDER --package poppler
     Tree C: /F | Set-Content cache\tree3.txt
+    Tree C:\ /F | Set-Content cache\tree3b.txt
+    Tree ..\..\ /F | Set-Content cache\tree3c.txt
     Tree C: /F | Set-Content binaries\tree3.txt
     Tree C: /F | Set-Content poppler\tree3.txt
 
